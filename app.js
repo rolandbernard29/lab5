@@ -29,7 +29,7 @@ app.get("/search", async function(req, res) {
 app.get("/api/updateFavorites", function(req, res){
   let sql;
   let sqlParams;
-  console.log(req);
+  
   switch (req.query.action) {
     case "add": sql = "INSERT INTO favorites (imageUrl, keyword) VALUES (?,?)";
                 sqlParams = [req.query.imageUrl, req.query.keyword];
@@ -67,7 +67,9 @@ app.get("/api/getFavorites", function(req, res){
     
 });//api/getFavorites
 
-async function getRandomImage(keyword, count) {
+//functions
+
+function getRandomImage(keyword, count) {
     
     return new Promise (function (resolve, reject) {
     let requestUrl = `https://api.unsplash.com/photos/random/?count=${count}&client_id=5O7gK6hJwQwlibDWyZLdAZF57XBDHQoCWIuwYk_TgPQ&featured=true&orientation=landscape&query=${keyword}`;

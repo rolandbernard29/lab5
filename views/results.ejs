@@ -4,12 +4,15 @@
             <main>
                 <h1> Cool Images</h1>
                 <form action="/search">
-                    <input type="text" placeholder="type keyword" class="searchinput" size="10" name="keyword"/><button class="searchbutton">Search</button> <a class="favlink" id="favlink" href="/getKeywords"> see Favorites</a>
+                    <input type="text" placeholder="type keyword" class="searchinput" size="10" name="keyword"/>
+                    <button class="searchbutton">Search</button>
+                    <a class="favlink" id="favlink" href="/getKeywords"> see Favorites</a>
                 </form>
                 <hr>
                 <div id="resultsContainer">
                 <% imageUrlArray.forEach(function(imageUrl, i){ %>
                 <%- (i % 3 ==0)?'<br>': '' %>
+                
                 <img class="image" src='<%= imageUrlArray[i] %>' width='200' height='200'/>
                 <img class="favoriteIcon" src='img/favorite.png' width='20'>
                 

@@ -14,7 +14,7 @@ $(document).ready(function () {
         
         if ($(this).attr("src") == "img/favorite.png") {
             $(this).attr("src", "img/favorite_on.png");
-            updateFavorites("add", imageUrl, keyword);
+            updateFavorite("add", imageUrl, keyword);
         }
         else {
             $(this).attr("src", "img/favorite.png");
@@ -63,9 +63,19 @@ $("#favorites").on("click", ".favoriteIcon", function(){
    }
    
 });//.favoriteIcon
+function updateFavorite(action, imageUrl, keyword) {
+    $.ajax({
+        method: "get",
+        url: "/updateFavorites",
+        data: {
+            "action": action,
+            "imageUrl": imageUrl,
+            "keyword": keyword
+        },
+    });// ajax
+}
 
-
-});
+}); ready
 
 
 
