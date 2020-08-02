@@ -4,16 +4,21 @@
             <main>
                 <h1> Cool Images</h1>
                 <form action="/search">
-                    <input type="text" placeholder="type keyword" name="keyword"/>
-                    <br><br>
-                    <button>Search</button>
+                    <input type="text" placeholder="type keyword" class="searchinput" size="10" name="keyword"/><button class="searchbutton">Search</button> <a class="favlink" id="favlink" href="/getKeywords"> see Favorites</a>
                 </form>
                 <hr>
-                <img src=`<%= imageUrl %>` width='200' height= '200'/>
+                <div id="resultsContainer">
+                <% imageUrlArray.forEach(function(imageUrl, i){ %>
+                <%- (i % 3 ==0)?'<br>': '' %>
+                <img class="image" src='<%= imageUrlArray[i] %>' width='200' height='200'/>
+                <img class="favoriteIcon" src='img/favorite.png' width='20'>
                 
-                
-            </main>
+                <% }); %>
+                </div>
+               </main>
             
-            
-<%- include('partials/footer.ejs') %>        
+<%- include('partials/footer.ejs') %>    
+
+</body>
+</html>
       
