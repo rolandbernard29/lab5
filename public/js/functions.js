@@ -75,7 +75,7 @@ function updateFavorite(action, imageUrl, keyword) {
     });// ajax
 }
 
-}); ready
+}); //ready
 
 
 
