@@ -41,6 +41,7 @@ app.get("/api/updateFavorites", function(req, res){
   pool.query(sql, sqlParams, function (err, rows, fields) {
     if (err) throw err;
     console.log(rows);
+    console.log(req.query.imageUrl);
     res.send(rows.affectedRows.toString());
   });
     

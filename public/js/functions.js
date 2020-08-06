@@ -66,7 +66,7 @@ $("#favorites").on("click", ".favoriteIcon", function(){
 function updateFavorite(action, imageUrl, keyword) {
     $.ajax({
         method: "get",
-        url: "/updateFavorites",
+        url: "/api/updateFavorites",
         data: {
             "action": action,
             "imageUrl": imageUrl,
